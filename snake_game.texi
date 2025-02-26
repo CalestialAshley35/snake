@@ -1,0 +1,151 @@
+@node Top
+@top Top
+
+@menu
+* Snake Game::
+@end menu
+
+@node Snake Game
+@chapter Snake Game
+@anchor{#snake-game}
+Welcome to the Snake Game! This is a classic snake game implemented
+using C and the ncurses library. The objective of the game is to control
+the snake and eat the food that appears on the screen. Each time the
+snake eats food, it grows longer, and the game continues until the snake
+collides with itself or the border.
+
+@menu
+* Features::
+* Requirements::
+* Installation::
+* How to Play::
+* Game Logic::
+* License::
+@end menu
+
+@node Features
+@section Features
+@anchor{#features}
+@itemize
+@item
+@strong{Smooth Gameplay:} The game provides smooth and responsive
+gameplay using the ncurses library.
+@item
+@strong{Score Tracking:} The game keeps track of the player's score,
+which is based on the length of the snake.
+@item
+@strong{Food Generation:} Random food generation ensures a unique and
+challenging experience every time.
+@item
+@strong{Game Over Screen:} Displays the final score and a game over
+message when the snake collides with itself or the border.
+@end itemize
+
+@node Requirements
+@section Requirements
+@anchor{#requirements}
+@itemize
+@item
+@strong{GCC:} You need GCC installed to compile the game.
+@item
+@strong{ncurses:} The game uses the ncurses library and output.
+@end itemize
+
+@node Installation
+@section Installation
+@anchor{#installation}
+To install the game, follow these steps:
+
+@enumerate
+@item
+Clone the repository:
+
+@verbatim
+git clone https://github.com/CalestialAshley35/snake.git
+@end verbatim
+
+@item
+Navigate to the project directory:
+
+@verbatim
+cd snake
+@end verbatim
+
+@item
+Compile the game using GCC:
+
+@verbatim
+gcc -o snake snake.c -lncurses
+@end verbatim
+
+@end enumerate
+
+@node How to Play
+@section How to Play
+@anchor{#how-to-play}
+@enumerate
+@item
+Run the game:
+
+@verbatim
+./snake
+@end verbatim
+
+@item
+Use the arrow keys to control the snake:
+
+@itemize
+@item
+@strong{Up:} Move up
+@item
+@strong{Down:} Move down
+@item
+@strong{Left:} Move left
+@item
+@strong{Right:} Move right
+@end itemize
+
+@item
+The goal is to eat the food (@code{*}) that appears on the screen. Each
+time the snake eats food, it grows longer.
+
+@item
+Avoid colliding with the borders (@code{#}) or with yourself. When the
+snake collides, the game is over, and the final score is displayed.
+
+@end enumerate
+
+@node Game Logic
+@section Game Logic
+@anchor{#game-logic}
+The game consists of the following main functions:
+
+@itemize
+@item
+@strong{init():} Initializes the ncurses library and sets up the game
+environment.
+@item
+@strong{draw_border():} Draws the game border on the screen.
+@item
+@strong{draw_snake:} Draws the snake on the screen based on its current
+position and length.
+@item
+@strong{move_snake:} Moves the snake in the current direction and checks
+for collisions with the food.
+@item
+@strong{collision:} Checks if the snake has collided with the border or
+itself.
+@item
+@strong{generate_food:} Generates food at a random position on the
+screen.
+@item
+@strong{game_over(int score):} Displays the game over screen with the
+final score.
+@end itemize
+
+@node License
+@section License
+@anchor{#license}
+This project is licensed under the GNU General Public License v3.0. See
+the @uref{https://www.gnu.org/licenses/gpl-3.0.html,LICENSE} file for
+details.
